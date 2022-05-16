@@ -1,0 +1,53 @@
+﻿@model IEnumerable<CTS_CC.Models.Member>
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List</h2>
+
+
+<h2>Customers</h2>
+@if (!Model.Any())
+{
+    <p>We don't have any membrs</p>
+}
+else
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>Name</th>
+                <th>Address</th>
+                <th>Voter Id</th>
+                <th>Voted</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var member in Model)
+            {
+                @*<a href="/Customer/Details/@customer.Id">@customer.Name</a>*@
+            <tr>
+                <td>@member._name</td>
+                <td>@member._address</td>
+                <td>@member._voterId</td>
+                @if (member._isVoted == false)
+                {
+                    <td><input type="checkbox" /></td>  
+                }
+                    else
+                    {
+            <td><input type="checkbox" checked disabled/></td>
+                    }
+                <td>@Html.ActionLink("Voted", "AddVote", "Home", new { id = member._id }, null)</td>
+               
+            </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+}
