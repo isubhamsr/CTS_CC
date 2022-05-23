@@ -8,8 +8,10 @@ using System.Data.Entity;
 
 namespace CTS_CC.Controllers
 {
+    [RoutePrefix("Home")]
     public class HomeController : Controller
     {
+        
 
         private ApplicationDbContext _context;
 
@@ -42,6 +44,15 @@ namespace CTS_CC.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        [Route("TestUrl/{year}/{month}")]
+        public ActionResult TestUrl(int year, int month)
+        {
+
+            string text = $"The Year is {year} and the month is {month}";
+
+            return Content(text);
         }
 
         public ActionResult Create()

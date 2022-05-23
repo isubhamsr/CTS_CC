@@ -127,7 +127,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DbOperations\EmployeeRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -139,8 +141,14 @@
     <Compile Include="Migrations\202205161855175_AddVoterIdToMember.designer.cs">
       <DependentUpon>202205161855175_AddVoterIdToMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205231055214_AddEmplyeeAndAddressModel.cs" />
+    <Compile Include="Migrations\202205231055214_AddEmplyeeAndAddressModel.designer.cs">
+      <DependentUpon>202205231055214_AddEmplyeeAndAddressModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Address.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -182,6 +190,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
     <Content Include="Views\Home\List.cshtml" />
+    <Content Include="Views\Employee\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -205,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205161855175_AddVoterIdToMember.resx">
       <DependentUpon>202205161855175_AddVoterIdToMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205231055214_AddEmplyeeAndAddressModel.resx">
+      <DependentUpon>202205231055214_AddEmplyeeAndAddressModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

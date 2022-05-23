@@ -14,5 +14,7 @@ namespace CTS_CC.Models
         }
 
         public DbSet<Member> Members { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Address> Address { get; set; }
     }
 }

@@ -12,6 +12,7 @@ namespace CTS_CC.Models
         public int _id { get; set; }
         [Display(Name = "Name")]
         public string _name { get; set; }
+        [Required(ErrorMessage ="Asdsd")]
         [Display(Name = "Address")]
         public string _address { get; set; }
         [Display(Name = "VoterId")]
